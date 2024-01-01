@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::namespace('App\Http\Controllers\API')->prefix('v1')->group(function ()
+{
+    Route::controller('UserController')->group(function(){
+        Route::get('/profile/{id}', 'show');
+        Route::patch('/profile/{id}/update', 'update');
+    });
+});

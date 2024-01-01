@@ -19,6 +19,7 @@ Route::namespace('App\Http\Controllers')->group(function ()
     });
 
     Route::resource('products', 'ProductController')->middleware('auth');
+    Route::get('/edit/profile', 'HomeController@edit')->name('user.edit')->middleware('auth');
 });
 
 Auth::routes();
