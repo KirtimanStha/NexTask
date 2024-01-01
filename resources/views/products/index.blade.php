@@ -1,6 +1,7 @@
-@extends('layouts')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
     <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Create Product</a>
 
     <table class="table table-bordered">
@@ -34,7 +35,8 @@
     <div class="d-flex justify-content-center">
         {{ $products->links() }}
     </div>
-
+</div>
+    
     <!-- Main modal -->
     <div id="default-modal" class="modal fade" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">

@@ -18,5 +18,9 @@ Route::namespace('App\Http\Controllers')->group(function ()
         return view('welcome');
     });
 
-    Route::resource('products', 'ProductController');
+    Route::resource('products', 'ProductController')->middleware('auth');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
