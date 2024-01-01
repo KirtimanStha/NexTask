@@ -1,0 +1,4 @@
+Register corn job to run command "php artisan schedule:run"
+
+For eg:-
+* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
